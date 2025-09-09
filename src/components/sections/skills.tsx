@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -20,7 +23,14 @@ const skillsData = {
 
 export function Skills() {
   return (
-    <section id="skills" className="w-full bg-background py-20 lg:py-32">
+    <motion.section
+      id="skills"
+      className="w-full bg-background py-20 lg:py-32"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-glow">
@@ -65,6 +75,6 @@ export function Skills() {
           </Card>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

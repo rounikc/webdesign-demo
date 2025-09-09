@@ -1,12 +1,22 @@
+"use client";
+
 import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 export function Contact() {
   return (
-    <section id="contact" className="w-full py-20 lg:py-32">
+    <motion.section
+      id="contact"
+      className="w-full py-20 lg:py-32"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-glow">
@@ -38,6 +48,6 @@ export function Contact() {
             </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
