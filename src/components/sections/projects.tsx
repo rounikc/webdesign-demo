@@ -1,53 +1,62 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { Download, Star } from "lucide-react";
+
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const projectsData = [
   {
-    title: "Cyberpunk Fitness App",
-    description: "A mobile app for tracking workouts with a futuristic, neon interface. Built with React Native and Firebase.",
+    title: "FoodieApp",
+    description: "A comprehensive food delivery app with real-time tracking, restaurant management, and a seamless ordering experience.",
     image: "https://picsum.photos/600/400",
-    hint: "mobile app",
-    tags: ["React Native", "Firebase", "Expo"],
-    liveUrl: "#",
-    githubUrl: "#",
+    hint: "food delivery",
+    category: "React Native",
+    downloads: "25K+",
+    rating: "4.8",
   },
   {
-    title: "AI-Powered News Aggregator",
-    description: "A web platform that uses AI to curate and summarize tech news. Developed with Next.js and Tailwind CSS.",
+    title: "GymBro",
+    description: "A fitness tracking app that helps users log workouts, track progress, and connect with a community of fitness enthusiasts.",
+    image: "https://picsum.photos/600/400",
+    hint: "fitness gym",
+    category: "React Native",
+    downloads: "15K+",
+    rating: "4.6",
+  },
+  {
+    title: "DevDash",
+    description: "A dashboard for developers to monitor their projects, track tasks, and visualize productivity metrics.",
     image: "https://picsum.photos/600/400",
     hint: "dashboard data",
-    tags: ["Next.js", "TypeScript", "AI"],
-    liveUrl: "#",
-    githubUrl: "#",
+    category: "Web Apps",
+    downloads: "8K+",
+    rating: "4.9",
   },
   {
-    title: "Decentralized Social Network",
-    description: "A proof-of-concept social media app on the blockchain, ensuring user privacy and data ownership.",
+    title: "StyleSwap",
+    description: "An e-commerce platform for a fashion brand, featuring a modern UI, smooth animations, and a secure checkout process.",
     image: "https://picsum.photos/600/400",
-    hint: "social network",
-    tags: ["React", "Solidity", "Ethers.js"],
-    liveUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    title: "Interactive E-commerce Store",
-    description: "An e-commerce mobile app for a streetwear brand with immersive animations and a seamless checkout experience.",
-    image: "https://picsum.photos/600/400",
-    hint: "ecommerce mobile",
-    tags: ["React Native", "Shopify API"],
-    liveUrl: "#",
-    githubUrl: "#",
+    hint: "fashion e-commerce",
+    category: "UI/UX",
+    downloads: "12K+",
+    rating: "4.7",
   },
 ];
 
-export function Projects() {
+const categories = ["All Projects", "React Native", "Web Apps", "UI/UX"];
+
+export function FeaturedProjects() {
+  const [filter, setFilter] = useState("All Projects");
+
+  const filteredProjects = projectsData.filter((project) =>
+    filter === "All Projects" ? true : project.category === filter
+  );
+
   return (
     <motion.section
       id="projects"
@@ -59,55 +68,66 @@ export function Projects() {
     >
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-glow">
-            My Projects
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Featured <span className="text-glow">Projects</span>
           </h2>
+          <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
-            Here are some of the projects I've built. Explore them to see my skills in action.
+            Showcasing mobile applications that combine beautiful design with powerful functionality
           </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
-          {projectsData.map((project, index) => (
+
+        <div className="mb-12 flex flex-wrap items-center justify-center gap-4">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant="outline"
+              onClick={() => setFilter(category)}
+              className={cn(
+                "rounded-full border-primary/20 transition-all duration-300",
+                filter === category && "neon-border bg-primary text-primary-foreground"
+              )}
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
+        <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
+          {filteredProjects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Card className="neon-border-accent h-full overflow-hidden transition-all hover:scale-105 hover:shadow-accent/20 hover:shadow-lg">
-                <CardHeader>
-                  <div className="aspect-video relative mb-4">
+                <CardContent className="p-0">
+                  <div className="relative aspect-video">
                     <Image
                       src={project.image}
                       alt={project.title}
                       fill
-                      className="object-cover rounded-t-lg"
+                      className="object-cover"
                       data-ai-hint={project.hint}
                     />
+                    <div className="absolute top-4 right-4 flex items-center gap-2">
+                      <div className="flex items-center gap-1 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                        <Download className="h-3 w-3" />
+                        <span>{project.downloads}</span>
+                      </div>
+                      <div className="flex items-center gap-1 rounded-full bg-black/50 px-2 py-1 text-xs text-white backdrop-blur-sm">
+                        <Star className="h-3 w-3 text-yellow-400" />
+                        <span>{project.rating}</span>
+                      </div>
+                    </div>
                   </div>
-                  <CardTitle className="text-xl accent-glow">{project.title}</CardTitle>
-                  <div className="flex flex-wrap gap-2 pt-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} variant="secondary">{tag}</Badge>
-                    ))}
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold accent-glow">{project.title}</h3>
+                    <p className="mt-2 text-muted-foreground">{project.description}</p>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{project.description}</CardDescription>
                 </CardContent>
-                <CardFooter className="flex justify-end gap-2 mt-auto">
-                  <Button variant="outline" asChild>
-                    <Link href={project.liveUrl} target="_blank">
-                      Live Demo <ExternalLink className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild>
-                    <Link href={project.githubUrl} target="_blank">
-                      GitHub
-                    </Link>
-                  </Button>
-                </CardFooter>
               </Card>
             </motion.div>
           ))}
