@@ -46,7 +46,7 @@ export function About() {
           <div className="flex flex-col justify-center space-y-6 lg:col-span-2">
             <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                    About <span className="text-glow">Me</span>
+                    About <span className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]">Me</span>
                 </h2>
                 <div className="h-1 w-16 bg-primary"></div>
               <p className="text-muted-foreground md:text-lg">
@@ -70,7 +70,7 @@ export function About() {
                 viewport={{ once: true, amount: 0.5 }}
                 transition={{ duration: 0.5 }}
             >
-                <Card className="neon-border-accent w-full max-w-xs overflow-hidden">
+                <Card className="w-full max-w-xs overflow-hidden border-accent/40 shadow-[0_0_10px_hsl(var(--accent)/0.5)]">
                     <CardContent className="p-0">
                     <Image
                         src="https://picsum.photos/600/800"
@@ -94,7 +94,7 @@ export function About() {
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                    <Card className="neon-border h-full bg-card/50 text-center p-6">
+                    <Card className="h-full bg-card/50 text-center p-6 border-primary/40 shadow-[0_0_10px_hsl(var(--primary)/0.3)]">
                         <div className="flex justify-center mb-4">
                             <item.icon className="h-10 w-10 text-primary" />
                         </div>

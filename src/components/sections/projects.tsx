@@ -69,7 +69,7 @@ export function FeaturedProjects() {
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Featured <span className="text-glow">Projects</span>
+            Featured <span className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]">Projects</span>
           </h2>
           <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
@@ -85,7 +85,7 @@ export function FeaturedProjects() {
               onClick={() => setFilter(category)}
               className={cn(
                 "rounded-full border-primary/20 transition-all duration-300",
-                filter === category && "neon-border bg-primary text-primary-foreground"
+                filter === category && "bg-primary text-primary-foreground border-primary/40 shadow-[0_0_10px_hsl(var(--primary)/0.3)]"
               )}
             >
               {category}
@@ -102,7 +102,7 @@ export function FeaturedProjects() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <Card className="neon-border-accent h-full overflow-hidden transition-all hover:scale-105 hover:shadow-accent/20 hover:shadow-lg">
+              <Card className="h-full overflow-hidden transition-all hover:scale-105 hover:shadow-accent/20 hover:shadow-lg border-accent/40 shadow-[0_0_10px_hsl(var(--accent)/0.5)]">
                 <CardContent className="p-0">
                   <div className="relative aspect-video">
                     <Image
@@ -124,7 +124,7 @@ export function FeaturedProjects() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold accent-glow">{project.title}</h3>
+                    <h3 className="text-2xl font-bold text-accent drop-shadow-[0_0_8px_hsl(var(--accent))]">{project.title}</h3>
                     <p className="mt-2 text-muted-foreground">{project.description}</p>
                   </div>
                 </CardContent>

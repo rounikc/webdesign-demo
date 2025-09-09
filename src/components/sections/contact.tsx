@@ -60,7 +60,7 @@ export function Contact() {
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Get In <span className="text-glow">Touch</span>
+            Get In <span className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]">Touch</span>
           </h2>
           <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
@@ -77,7 +77,7 @@ export function Contact() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
               {contactInfo.map((item) => (
                 <Link key={item.title} href={item.href}>
-                  <Card className="neon-border group flex h-full cursor-pointer items-center gap-4 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
+                  <Card className="group flex h-full cursor-pointer items-center gap-4 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20 border-primary/40 shadow-[0_0_10px_hsl(var(--primary)/0.3)]">
                     <div className="rounded-lg bg-primary/10 p-3">
                       <item.icon className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
                     </div>
@@ -91,9 +91,9 @@ export function Contact() {
             </div>
           </div>
           
-          <Card className="neon-border-accent flex flex-col p-4 md:p-8">
+          <Card className="flex flex-col p-4 md:p-8 border-accent/40 shadow-[0_0_10px_hsl(var(--accent)/0.5)]">
              <CardHeader>
-                <CardTitle className="accent-glow text-2xl">Send a Message</CardTitle>
+                <CardTitle className="text-accent drop-shadow-[0_0_8px_hsl(var(--accent))] text-2xl">Send a Message</CardTitle>
             </CardHeader>
             <CardContent>
                 <form className="grid gap-4">

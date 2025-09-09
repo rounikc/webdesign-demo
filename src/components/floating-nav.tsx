@@ -58,7 +58,7 @@ export function FloatingNav() {
     <>
       {/* Desktop Navigation */}
       <nav className="fixed bottom-4 left-1/2 z-50 hidden -translate-x-1/2 md:block">
-        <div className="glassmorphic flex items-center gap-2 rounded-full p-2 shadow-lg">
+        <div className="flex items-center gap-2 rounded-full p-2 shadow-lg bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -82,7 +82,7 @@ export function FloatingNav() {
       <div className="fixed bottom-4 right-4 z-50 md:hidden">
         <div className="relative">
           {isMenuOpen && (
-            <div className="glassmorphic absolute bottom-14 right-0 flex flex-col items-end gap-2 rounded-xl p-2 shadow-lg">
+            <div className="absolute bottom-14 right-0 flex flex-col items-end gap-2 rounded-xl p-2 shadow-lg bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -102,7 +102,7 @@ export function FloatingNav() {
           )}
           <Button
             size="icon"
-            className="glassmorphic h-14 w-14 rounded-full shadow-lg"
+            className="h-14 w-14 rounded-full shadow-lg bg-gradient-to-r from-primary/10 to-accent/10 backdrop-blur-md border border-primary/20"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation menu"
           >

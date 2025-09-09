@@ -147,7 +147,7 @@ export function Skills() {
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            My <span className="text-glow">Tech Stack</span>
+            My <span className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]">Tech Stack</span>
           </h2>
           <div className="mx-auto mt-2 h-1 w-20 bg-primary"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
@@ -180,7 +180,7 @@ export function Skills() {
               viewport={{ once: true, amount: 0.5 }}
               transition={{ duration: 0.3, delay: index * 0.05 }}
             >
-              <Card className="neon-border group flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20">
+              <Card className="group flex h-full flex-col items-center justify-center p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-primary/20 border-primary/40 shadow-[0_0_10px_hsl(var(--primary)/0.3)]">
                 <CardContent className="flex flex-col items-center gap-4 p-0">
                   <div className="transition-transform duration-300 group-hover:scale-110">
                     {skill.icon}
