@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Smartphone, Code, Zap, Users } from "lucide-react";
 
@@ -29,7 +29,7 @@ const expertiseData = [
     },
 ];
 
-const skillsTags = ["React Native", "TypeScript", "Expo", "Firebase"];
+const skillsTags = ["React Native", "TypeScript", "Expo", "Firebase", "Next.js", "JavaScript"];
 
 export function About() {
   return (
@@ -42,16 +42,13 @@ export function About() {
       transition={{ duration: 0.5 }}
     >
       <div className="container">
-        <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                About <span className="text-glow">Me</span>
-            </h2>
-            <div className="mt-2 h-1 w-16 bg-primary mx-auto"></div>
-        </div>
-
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
-          <div className="flex flex-col justify-center space-y-6">
+        <div className="grid gap-12 lg:grid-cols-3 lg:gap-20">
+          <div className="flex flex-col justify-center space-y-6 lg:col-span-2">
             <div className="space-y-4">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                    About <span className="text-glow">Me</span>
+                </h2>
+                <div className="h-1 w-16 bg-primary"></div>
               <p className="text-muted-foreground md:text-lg">
                 I'm a passionate mobile app developer with over 4 years of experience creating innovative mobile solutions. My expertise lies in React Native development, where I bridge the gap between beautiful design and powerful functionality.
               </p>
@@ -64,23 +61,31 @@ export function About() {
                     <Badge key={tag} variant="outline" className="border-primary/50 text-primary/80">{tag}</Badge>
                 ))}
             </div>
-             <div className="flex items-center justify-center pt-6">
+          </div>
+
+            <motion.div
+                className="flex items-center justify-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.5 }}
+            >
                 <Card className="neon-border-accent w-full max-w-xs overflow-hidden">
                     <CardContent className="p-0">
                     <Image
-                        src="https://picsum.photos/600/600"
+                        src="https://picsum.photos/600/800"
                         alt="About Me"
                         width={600}
-                        height={600}
+                        height={800}
                         className="h-full w-full object-cover"
                         data-ai-hint="portrait person"
                     />
                     </CardContent>
                 </Card>
-            </div>
-          </div>
+            </motion.div>
+        </div>
 
-          <div className="grid grid-cols-2 gap-6">
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
             {expertiseData.map((item, index) => (
                 <motion.div
                     key={item.title}
@@ -89,19 +94,16 @@ export function About() {
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                    <Card className="neon-border h-full bg-card/50">
-                        <CardHeader className="flex-row items-center gap-4 space-y-0">
-                            <item.icon className="h-8 w-8 text-primary" />
-                            <CardTitle className="text-lg">{item.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm text-muted-foreground">{item.description}</p>
-                        </CardContent>
+                    <Card className="neon-border h-full bg-card/50 text-center p-6">
+                        <div className="flex justify-center mb-4">
+                            <item.icon className="h-10 w-10 text-primary" />
+                        </div>
+                        <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                        <p className="text-sm text-muted-foreground">{item.description}</p>
                     </Card>
                 </motion.div>
             ))}
           </div>
-        </div>
       </div>
     </motion.section>
   );
