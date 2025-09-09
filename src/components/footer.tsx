@@ -20,7 +20,7 @@ const services = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-primary/20 py-12">
+    <footer className="border-t border-primary/20 py-12 pb-24">
       <div className="container">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           {/* Column 1: Bio */}
