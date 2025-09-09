@@ -1,11 +1,33 @@
 "use client";
 
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Mail, Phone } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+
+const contactInfo = [
+  {
+    icon: Mail,
+    title: "Email",
+    detail: "alex@devmobile.com",
+    href: "mailto:alex@devmobile.com",
+  },
+  {
+    icon: Phone,
+    title: "Phone",
+    detail: "+1 (555) 123-4567",
+    href: "tel:+15551234567",
+  },
+  {
+    icon: Github,
+    title: "GitHub",
+    detail: "@alexdev",
+    href: "#",
+  },
+];
 
 export function Contact() {
   return (
@@ -19,33 +41,66 @@ export function Contact() {
     >
       <div className="container">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-glow">
-            Get In Touch
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Get In <span className="text-glow">Touch</span>
           </h2>
+          <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
-            Have a project in mind or just want to say hello? Feel free to reach out.
+            Ready to bring your mobile app idea to life? Let&apos;s discuss your project and create something amazing together.
           </p>
         </div>
-        <div className="mx-auto max-w-xl">
-            <form className="grid gap-4">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <Input type="text" placeholder="Name" />
-                <Input type="email" placeholder="Email" />
-              </div>
-              <Textarea placeholder="Message" className="min-h-[150px]" />
-              <Button type="submit" size="lg">Send Message</Button>
-            </form>
-            <div className="mt-8 flex justify-center gap-6">
-                <Link href="#" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors">
-                    <Github className="h-8 w-8" />
+
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="space-y-8">
+            <h3 className="text-2xl font-bold">Let&apos;s Connect</h3>
+            <p className="text-muted-foreground">
+              I&apos;m always excited to work on new mobile projects and collaborate with innovative teams. Whether you need a complete app development or consultation, I&apos;m here to help.
+            </p>
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
+              {contactInfo.map((item) => (
+                <Link key={item.title} href={item.href}>
+                  <Card className="neon-border group flex h-full cursor-pointer items-center gap-4 p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/20">
+                    <div className="rounded-lg bg-primary/10 p-3">
+                      <item.icon className="h-6 w-6 text-primary transition-transform duration-300 group-hover:scale-110" />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">{item.title}</h4>
+                      <p className="text-sm text-muted-foreground">{item.detail}</p>
+                    </div>
+                  </Card>
                 </Link>
-                <Link href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
-                    <Linkedin className="h-8 w-8" />
-                </Link>
-                <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
-                    <Twitter className="h-8 w-8" />
-                </Link>
+              ))}
             </div>
+          </div>
+          
+          <Card className="neon-border-accent flex flex-col p-4 md:p-8">
+             <CardHeader>
+                <CardTitle className="accent-glow text-2xl">Send a Message</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <form className="grid gap-4">
+                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                    <div>
+                        <label htmlFor="name" className="mb-2 block text-sm font-medium">Name</label>
+                        <Input id="name" type="text" placeholder="Your name" />
+                    </div>
+                    <div>
+                        <label htmlFor="email" className="mb-2 block text-sm font-medium">Email</label>
+                        <Input id="email" type="email" placeholder="your@email.com" />
+                    </div>
+                </div>
+                 <div>
+                    <label htmlFor="subject" className="mb-2 block text-sm font-medium">Subject</label>
+                    <Input id="subject" type="text" placeholder="Project discussion" />
+                </div>
+                <div>
+                    <label htmlFor="message" className="mb-2 block text-sm font-medium">Message</label>
+                    <Textarea id="message" placeholder="Tell me about your project..." className="min-h-[120px]" />
+                </div>
+                <Button type="submit" size="lg" className="bg-gradient-to-r from-primary to-accent">Send Message</Button>
+                </form>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </motion.section>
