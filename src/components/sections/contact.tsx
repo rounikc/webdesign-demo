@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Mail, Phone } from "lucide-react";
+import { Github, Mail, Phone, Twitter, Instagram, Bot } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -25,6 +25,24 @@ const contactInfo = [
     icon: Github,
     title: "GitHub",
     detail: "@alexdev",
+    href: "#",
+  },
+  {
+    icon: Twitter,
+    title: "X",
+    detail: "@alexdev",
+    href: "#",
+  },
+  {
+    icon: Instagram,
+    title: "Instagram",
+    detail: "@alexdev",
+    href: "#",
+  },
+  {
+    icon: Bot,
+    title: "Discord",
+    detail: "alexdev#1234",
     href: "#",
   },
 ];
