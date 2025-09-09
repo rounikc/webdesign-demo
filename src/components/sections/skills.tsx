@@ -13,8 +13,14 @@ const skillsData = [
     category: "Mobile",
     color: "text-green-400",
     icon: (
-      <svg fill="currentColor" width="48" height="48" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path d="M512 512a448 448 0 0 0 448-448h-896a448 448 0 0 0 448 448zm0 288a128 128 0 1 1 0-256 128 128 0 0 1 0 256zm0 128a256 256 0 1 0 0-512 256 256 0 0 0 0 512z" />
+      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="-11.5 -10.23174 23 20.46348">
+        <title>React Logo</title>
+        <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
+        <g stroke="currentColor" strokeWidth="1" fill="none">
+          <ellipse rx="11" ry="4.2"/>
+          <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+          <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+        </g>
       </svg>
     )
   },
@@ -23,8 +29,14 @@ const skillsData = [
     category: "Frontend",
     color: "text-cyan-400",
     icon: (
-      <svg fill="currentColor" width="48" height="48" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-        <path d="M512 512a448 448 0 0 0 448-448h-896a448 448 0 0 0 448 448zm0 288a128 128 0 1 1 0-256 128 128 0 0 1 0 256zm0 128a256 256 0 1 0 0-512 256 256 0 0 0 0 512z" />
+       <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="-11.5 -10.23174 23 20.46348">
+        <title>React Logo</title>
+        <circle cx="0" cy="0" r="2.05" fill="currentColor"/>
+        <g stroke="currentColor" strokeWidth="1" fill="none">
+          <ellipse rx="11" ry="4.2"/>
+          <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+          <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+        </g>
       </svg>
     )
   },
@@ -33,10 +45,9 @@ const skillsData = [
     category: "Language", 
     color: "text-pink-500",
     icon: (
-        <svg fill="currentColor" width="48" height="48" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-            <path d="m0 0h128v128h-128z" fill="#007acc" />
-            <path d="m28.6 94.1v-55.8h11.9v4.5c3.3-3.6 7.4-5.3 12.3-5.3 9.7 0 17.1 6.7 17.1 16.7v39.9h-11.9v-37.4c0-5.3-3.2-8.7-8.3-8.7-4.9 0-8.9 3.5-8.9 8.7v37.4z" fill="#fff" />
-            <path d="m76.8 62.7c0-5.4 4.3-9.5 9.7-9.5 5.5 0 9.7 4.1 9.7 9.5 0 5.5-4.2 9.6-9.7 9.6-5.4 0-9.7-4.1-9.7-9.6zm13.1 20.8c3.2-1.9 4.3-3.7 4.3-6.1v-1.7h-15.6c.1 7.3 4.9 11.3 11.3 11.3 4.5 0 7.8-1.7 9.8-3.9l-5-5.9c-1.3 1-3.2 1.8-4.8 1.8-2.3 0-3.6-1.2-4.2-2.8z" fill="#fff" />
+        <svg width="48" height="48" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <rect width="128" height="128" fill="#007acc"/>
+          <path fill="white" d="M28.6 94.1V38.3h11.9v4.5c3.3-3.6 7.4-5.3 12.3-5.3 9.7 0 17.1 6.7 17.1 16.7v39.9h-11.9V56.7c0-5.3-3.2-8.7-8.3-8.7-4.9 0-8.9 3.5-8.9 8.7v37.4H28.6zM99.2 62.7c0-5.4-4.3-9.5-9.7-9.5-5.5 0-9.7 4.1-9.7 9.5s4.2 9.6 9.7 9.6c5.4 0 9.7-4.1 9.7-9.6zm-6.2 20.8c3.2-1.9 4.3-3.7 4.3-6.1v-1.7H81.7c.1 7.3 4.9 11.3 11.3 11.3 4.5 0 7.8-1.7 9.8-3.9l-5-5.9c-1.3 1-3.2 1.8-4.8 1.8-2.3 0-3.6-1.2-4.2-2.8z"/>
         </svg>
     )
   },
@@ -45,10 +56,10 @@ const skillsData = [
     category: "Language",
     color: "text-yellow-400",
     icon: (
-      <svg fill="currentColor" width="48" height="48" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-        <path d="m0 0h128v128h-128z" fill="#f7df1e"/>
-        <path d="m61.3 92.4c-3.6 2.3-8.2 3.6-13.2 3.6-9.1 0-14.2-4.5-17.1-10.9l9-5.1c1.8 3.8 4.2 6.5 7.9 6.5 2.8 0 4.8-.9 4.8-3.2 0-2.3-1.8-3.2-5.4-4.5-6.1-2.2-9.9-5.2-9.9-11.3 0-6.1 4.5-10.3 12.1-10.3 4.2 0 7.8 1.2 10.5 2.9l-4.7 8.2c-1.7-1-3.3-1.6-4.9-1.6s-2.8.6-2.8 2.3c0 1.8 1.3 2.6 4.7 3.8 6.7 2.4 10.6 5.6 10.6 11.7.1 7.2-4.9 11.5-13.2 11.5m30-47.8c-7.2 0-11.7 4.1-13.8 7.3l8.6 5.4c1.3-2 2.6-3.3 5-3.3 2.4 0 4 .9 4 3v28.8h10.3v-30.8c0-7.8-5.2-10.6-14.1-10.6"/>
-      </svg>
+        <svg width="48" height="48" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+          <rect width="128" height="128" fill="#f7df1e"/>
+          <path d="M61.3 92.4c-3.6 2.3-8.2 3.6-13.2 3.6-9.1 0-14.2-4.5-17.1-10.9l9-5.1c1.8 3.8 4.2 6.5 7.9 6.5 2.8 0 4.8-.9 4.8-3.2 0-2.3-1.8-3.2-5.4-4.5-6.1-2.2-9.9-5.2-9.9-11.3 0-6.1 4.5-10.3 12.1-10.3 4.2 0 7.8 1.2 10.5 2.9l-4.7 8.2c-1.7-1-3.3-1.6-4.9-1.6s-2.8.6-2.8 2.3c0 1.8 1.3 2.6 4.7 3.8 6.7 2.4 10.6 5.6 10.6 11.7.1 7.2-4.9 11.5-13.2 11.5zm30-47.8c-7.2 0-11.7 4.1-13.8 7.3l8.6 5.4c1.3-2 2.6-3.3 5-3.3 2.4 0 4 .9 4 3v28.8h10.3V57.1c0-7.8-5.2-10.6-14.1-10.6z"/>
+        </svg>
     )
   },
   {
