@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Mail, Phone, Twitter, Instagram, Bot } from "lucide-react";
+import { Github, Mail, Linkedin, Twitter, Instagram, Bot } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -16,14 +16,14 @@ const contactInfo = [
     href: "mailto:alex@devmobile.com",
   },
   {
-    icon: Phone,
-    title: "Phone",
-    detail: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
-  },
-  {
     icon: Github,
     title: "GitHub",
+    detail: "@alexdev",
+    href: "#",
+  },
+  {
+    icon: Linkedin,
+    title: "LinkedIn",
     detail: "@alexdev",
     href: "#",
   },
@@ -64,15 +64,15 @@ export function Contact() {
           </h2>
           <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
-            Ready to bring your mobile app idea to life? Let&apos;s discuss your project and create something amazing together.
+            Ready to bring your mobile app idea to life? Let's discuss your project and create something amazing together.
           </p>
         </div>
 
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold">Let&apos;s Connect</h3>
+            <h3 className="text-2xl font-bold">Let's Connect</h3>
             <p className="text-muted-foreground">
-              I&apos;m always excited to work on new mobile projects and collaborate with innovative teams. Whether you need a complete app development or consultation, I&apos;m here to help.
+              I'm always excited to work on new mobile projects and collaborate with innovative teams. Whether you need a complete app development or consultation, I'm here to help.
             </p>
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-1">
               {contactInfo.map((item) => (
