@@ -10,7 +10,6 @@ const navLinks = [
   { href: "#about", label: "About", icon: User },
   { href: "#skills", label: "Skills", icon: Code },
   { href: "#projects", label: "Projects", icon: Bot },
-  { href: "#resume-generator", label: "AI Resume", icon: Bot },
   { href: "#contact", label: "Contact", icon: Mail },
 ];
 
@@ -19,9 +18,22 @@ export function FloatingNav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navLinks.map(link => document.querySelector(link.href));
+      const sections = navLinks.map(link => {
+        const href = link.href;
+        // Ensure that we're dealing with a valid selector.
+        if (href.startsWith("#")) {
+          try {
+            return document.querySelector(href);
+          } catch (e) {
+            // In case of an invalid selector, return null.
+            return null;
+          }
+        }
+        return null;
+      }).filter(Boolean); // Filter out null values.
+  
       const scrollPosition = window.scrollY + window.innerHeight / 2;
-
+  
       for (const section of sections) {
         if (section) {
           const top = section.offsetTop;
@@ -33,7 +45,7 @@ export function FloatingNav() {
         }
       }
     };
-
+  
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);

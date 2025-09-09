@@ -22,7 +22,7 @@ export function Hero() {
             <Link href="#projects">View My Work</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover:text-primary">
-            <Link href="#contact">Get In Touch</Link>
+            <Link href="/resume.pdf" download>Download Resume</Link>
           </Button>
         </div>
       </div>
