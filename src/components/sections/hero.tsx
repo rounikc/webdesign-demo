@@ -3,19 +3,20 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
   return (
     <motion.section
       id="hero"
-      className="relative flex min-h-screen w-full flex-col items-center justify-center"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-       <div className="absolute inset-0 h-full w-full bg-background bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[-10px_-10px] bg-[size:24px_24px]"></div>
-       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,hsl(var(--primary)/0.15),transparent_40%)]"></div>
-      
+      <div className="absolute top-0 left-0 h-1/2 w-1/2 bg-primary/20 blur-[150px]"></div>
+      <div className="absolute top-0 right-0 h-1/2 w-1/2 bg-accent/20 blur-[150px]"></div>
+       
       <div className="container z-10 flex flex-col items-center text-center">
         <motion.h1 
           className="text-4xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
@@ -23,30 +24,66 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <span className="text-glow">Jane Doe</span>
+          Hi, I'm <span className="text-glow bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent">Alex</span>
         </motion.h1>
+        <motion.h2
+          className="mt-2 text-2xl font-bold tracking-tighter text-cyan-400 sm:text-3xl md:text-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          React Native Developer
+        </motion.h2>
         <motion.p 
           className="mt-4 max-w-2xl text-lg text-muted-foreground md:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          A passionate <span className="text-primary">React & React Native</span> developer crafting futuristic mobile and web experiences.
+          Crafting beautiful, performant mobile applications with React Native and modern technologies. Bringing ideas to life on iOS and Android platforms.
         </motion.p>
         <motion.div 
-          className="mt-8 flex gap-4"
+          className="mt-8 flex flex-col sm:flex-row items-center gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Button asChild size="lg">
-            <Link href="#projects">View My Work</Link>
+          <Button asChild size="lg" className="bg-gradient-to-r from-primary to-cyan-400 text-primary-foreground">
+            <Link href="/resume.pdf" download>
+              <Download className="mr-2 h-5 w-5" />
+              Download Resume
+            </Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary/10 hover:text-primary">
-            <Link href="/resume.pdf" download>Download Resume</Link>
-          </Button>
+          <div className="flex gap-4">
+            <Button asChild variant="outline" size="icon" className="rounded-full border-primary/50 hover:border-primary">
+              <Link href="#" aria-label="GitHub">
+                <Github className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="icon" className="rounded-full border-primary/50 hover:border-primary">
+              <Link href="#" aria-label="LinkedIn">
+                <Linkedin className="h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="icon" className="rounded-full border-primary/50 hover:border-primary">
+              <Link href="#" aria-label="Email">
+                <Mail className="h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </motion.div>
       </div>
+
+      <motion.div
+        className="absolute bottom-10"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+      >
+        <Link href="#about" aria-label="Scroll to about section">
+            <ArrowDown className="h-8 w-8 text-primary animate-bounce" />
+        </Link>
+      </motion.div>
     </motion.section>
   );
 }
