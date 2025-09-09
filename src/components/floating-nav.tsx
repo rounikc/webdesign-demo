@@ -51,7 +51,7 @@ export function FloatingNav() {
   }, []);
 
   return (
-    <nav className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2 md:top-4 md:bottom-auto">
+    <nav className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
       <div className="glassmorphic flex items-center gap-2 rounded-full p-2 shadow-lg">
         {navLinks.map((link) => (
           <Link
