@@ -35,7 +35,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Hi, I'm <span className="drop-shadow-[0_0_12px_hsl(var(--primary))] bg-gradient-to-r from-primary to-green-400 bg-clip-text text-transparent">Alex</span>
+          Hi, I'm <span className="drop-shadow-[0_0_12px_hsl(var(--primary))] bg-gradient-to-r from-primary via-cyan-400 to-accent bg-clip-text text-transparent">Alex</span>
         </motion.h1>
         <motion.h2
           className="mt-2 text-2xl font-bold tracking-tighter text-cyan-400 sm:text-3xl md:text-4xl"
@@ -59,7 +59,7 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Button asChild size="lg" className="bg-gradient-to-r from-primary to-cyan-400 text-primary-foreground">
+          <Button asChild size="lg" className="bg-gradient-to-r from-primary to-accent text-primary-foreground">
             <Link href="/resume.pdf" download>
               <Download className="mr-2 h-5 w-5" />
               Download Resume

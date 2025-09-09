@@ -62,7 +62,7 @@ export function Contact() {
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             Get In <span className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]">Touch</span>
           </h2>
-          <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
+          <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary via-cyan-400 to-accent"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
             Ready to bring your mobile app idea to life? Let's discuss your project and create something amazing together.
           </p>
@@ -115,7 +115,7 @@ export function Contact() {
                     <label htmlFor="message" className="mb-2 block text-sm font-medium">Message</label>
                     <Textarea id="message" placeholder="Tell me about your project..." className="min-h-[120px]" />
                 </div>
-                <Button type="submit" size="lg" className="bg-gradient-to-r from-primary to-accent">Send Message</Button>
+                <Button type="submit" size="lg" className="bg-gradient-to-r from-primary via-cyan-400 to-accent">Send Message</Button>
                 </form>
             </CardContent>
           </Card>

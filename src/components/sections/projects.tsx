@@ -69,7 +69,7 @@ export function FeaturedProjects() {
       <div className="container">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            Featured <span className="text-primary drop-shadow-[0_0_8px_hsl(var(--primary))]">Projects</span>
+            Featured <span className="text-cyan-400 drop-shadow-[0_0_8px_rgba(0,255,255,0.5)]">Projects</span>
           </h2>
           <div className="mx-auto mt-2 h-1 w-20 bg-gradient-to-r from-primary to-green-400"></div>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-xl">
