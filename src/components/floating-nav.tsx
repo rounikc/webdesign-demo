@@ -24,7 +24,7 @@ export function FloatingNav() {
         const href = link.href;
         if (href.startsWith("#")) {
           try {
-            return document.querySelector(href);
+            return document.querySelector(href) as HTMLElement;
           } catch (e) {
             return null;
           }
