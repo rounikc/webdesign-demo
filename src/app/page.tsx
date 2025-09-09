@@ -1,4 +1,4 @@
-import { Header } from "@/components/header";
+import { FloatingNav } from "@/components/floating-nav";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Skills } from "@/components/sections/skills";
@@ -10,7 +10,7 @@ import { Footer } from "@/components/footer";
 export default function Home() {
   return (
     <div className="flex min-h-screen w-full flex-col">
-      <Header />
+      <FloatingNav />
       <main className="flex-1">
         <Hero />
         <About />

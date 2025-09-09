@@ -85,4 +85,10 @@
     border: 1px solid hsl(var(--accent) / 0.4);
     box-shadow: 0 0 5px hsl(var(--accent) / 0.5), 0 0 10px hsl(var(--accent) / 0.3);
   }
+  .glassmorphic {
+    background: linear-gradient(90deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--primary)/0.2);
+  }
 }
