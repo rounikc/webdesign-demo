@@ -51,17 +51,29 @@ const skillsData = [
       </svg>
     )
   },
-  { 
-    name: "Next.js", 
-    category: "Frontend",
-    color: "text-white",
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="64" cy="64" r="64" fill="black"/>
-        <path d="M96.7998 42.4004L58.5998 94.0004H49.5998V48.4004C52.3998 48.4004 54.3998 47.6004 55.9998 46.0004C57.5998 44.4004 58.5998 42.8004 58.5998 40.8004H70.3998V87.2004L105.6 42.4004H96.7998Z" fill="white"/>
-        <path d="M85.6001 87.2002V40.8002H73.6001V94.0002H82.4001L120 42.4002H128L85.6001 87.2002Z" fill="white"/>
-      </svg>
-    )
+  {
+    name: "Java",
+    category: "Language",
+    color: "text-orange-500",
+    icon: <span className="text-4xl">☕</span>,
+  },
+  {
+    name: "C",
+    category: "Language",
+    color: "text-blue-600",
+    icon: <span className="text-4xl">🇨</span>,
+  },
+  {
+    name: "C++",
+    category: "Language",
+    color: "text-blue-700",
+    icon: <span className="text-4xl">👾</span>,
+  },
+  {
+    name: "Python",
+    category: "Language",
+    color: "text-yellow-500",
+    icon: <span className="text-4xl">🐍</span>,
   },
   { 
     name: "Firebase", 
