@@ -1,11 +1,22 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
+import { Download, Github, Linkedin, Mail, Mouse, Hand } from "lucide-react";
 
 export function Hero() {
+  const [showMouseIcon, setShowMouseIcon] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowMouseIcon((prev) => !prev);
+    }, 5000); // Switch icon every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <motion.section
       id="hero"
@@ -81,7 +92,11 @@ export function Hero() {
         transition={{ duration: 0.5, delay: 0.8 }}
       >
         <Link href="#about" aria-label="Scroll to about section">
-            <ArrowDown className="h-8 w-8 text-primary animate-bounce" />
+            {showMouseIcon ? (
+              <Mouse className="h-8 w-8 text-primary animate-bounce" />
+            ) : (
+              <Hand className="h-8 w-8 text-primary animate-bounce" />
+            )}
         </Link>
       </motion.div>
     </motion.section>
